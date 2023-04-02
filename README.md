@@ -1,6 +1,6 @@
-# aaa
+# @uxwb/react-components
 
-> aaaa
+> UI components for React
 
 [![NPM](https://img.shields.io/npm/v/@uxwb/react-components.svg)](https://www.npmjs.com/package/@uxwb/react-components)
 
