@@ -33,6 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
@@ -52,7 +53,6 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
     "microbundle-crl": "^0.13.10",
     "prettier": "^2.8.7",
     "react": "^18.0.0",
@@ -70,9 +70,7 @@
   "source": "./src/index.ts",
   "files": [
     "dist",
-    "README.md"
-  ],
-  "dependencies": {
-    "@storybook/addon-docs": "^6.5.16"
-  }
+    "README.md",
+    "LICENSE"
+  ]
 }
