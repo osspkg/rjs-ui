@@ -2,12 +2,12 @@
 
 > aaaa
 
-[![NPM](https://img.shields.io/npm/v/aaa.svg)](https://www.npmjs.com/package/aaa) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@uxwb/react-components.svg)](https://www.npmjs.com/package/@uxwb/react-components)
 
 ## Install
 
 ```bash
-npm install --save aaa
+yarn add @uxwb/react-components
 ```
 
 ## Usage
@@ -15,8 +15,7 @@ npm install --save aaa
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'aaa'
-import 'aaa/dist/index.css'
+import MyComponent from '@uxwb/react-components';
 
 class Example extends Component {
   render() {
@@ -27,4 +26,4 @@ class Example extends Component {
 
 ## License
 
-BSD-3-Clause © [aa](https://github.com/aa)
+BSD-3-Clause © [Uxwb Team](https://github.com/uxwb/react-components/blob/master/LICENSE)
