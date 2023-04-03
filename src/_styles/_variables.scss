@@ -1,0 +1,92 @@
+@use 'sass:map';
+
+@mixin color($before, $color, $after) {
+    --uxwb-color#{$before}#{$after}: #{$color};
+}
+
+@function var-color-bg($before) {
+    @return var(--uxwb-color#{$before}-bg);
+}
+
+@function var-color-text($before) {
+    @return var(--uxwb-color#{$before}-text);
+}
+
+@function var-color-line($before) {
+    @return var(--uxwb-color#{$before}-line);
+}
+
+$uxwb-color-light-bg: #ffffff !default;
+$uxwb-color-light-txt: #000000 !default;
+
+$uxwb-color-secondary-bg: #e2e2e2 !default;
+$uxwb-color-secondary-txt: #000000 !default;
+
+$uxwb-color-warning-bg: #f2c46d !default;
+$uxwb-color-warning-txt: #000000 !default;
+
+$uxwb-color-danger-bg: #bf8275 !default;
+$uxwb-color-danger-txt: #ffffff !default;
+
+$uxwb-color-success-bg: #46592a !default;
+$uxwb-color-success-txt: #ffffff !default;
+
+$uxwb-color-info-bg: #6997bf !default;
+$uxwb-color-info-txt: #ffffff !default;
+
+$uxwb-color-primary-bg: #0367a6 !default;
+$uxwb-color-primary-txt: #ffffff !default;
+
+$uxwb-color-dark-bg: #000000 !default;
+$uxwb-color-dark-txt: #ffffff !default;
+
+$uxwb-color-hover-bg: #f8f8f8 !default;
+$uxwb-color-hover-txt: #000000 !default;
+
+$uxwb-colors: (
+    '': $uxwb-color-light-bg,
+    '-light': $uxwb-color-light-bg,
+    '-secondary': $uxwb-color-secondary-bg,
+    '-warning': $uxwb-color-warning-bg,
+    '-danger': $uxwb-color-danger-bg,
+    '-success': $uxwb-color-success-bg,
+    '-info': $uxwb-color-info-bg,
+    '-primary': $uxwb-color-primary-bg,
+    '-dark': $uxwb-color-dark-bg,
+);
+
+$uxwb-text-colors: (
+    '': $uxwb-color-light-txt,
+    '-light': $uxwb-color-light-txt,
+    '-secondary': $uxwb-color-secondary-txt,
+    '-warning': $uxwb-color-warning-txt,
+    '-danger': $uxwb-color-danger-txt,
+    '-success': $uxwb-color-success-txt,
+    '-info': $uxwb-color-info-txt,
+    '-primary': $uxwb-color-primary-txt,
+    '-dark': $uxwb-color-dark-txt,
+);
+
+$uxwb-prefix: (
+    't': '-top',
+    'l': '-left',
+    'b': '-bottom',
+    'r': '-right',
+) !default;
+
+$uxwb-base-size: 1rem !default;
+$uxwb-radius-size: $uxwb-base-size * 0.8 !default;
+$uxwb-line-size: 1px !default;
+
+$uxwb-margin-x-size: $uxwb-base-size * 0.75 !default;
+$uxwb-margin-y-size: $uxwb-base-size * 0.5 !default;
+$uxwb-padding-x-size: $uxwb-base-size * 0.75 !default;
+$uxwb-padding-y-size: $uxwb-base-size * 0.5 !default;
+
+$uxwb-font-family-sans-serif: -apple-system, Ubuntu, Roboto, Arial, sans-serif !default;
+$uxwb-font-family-monospace: 'Ubuntu Mono', Consolas, 'Courier New', monospace !default;
+$uxwb-font-weight: bolder !default;
+$uxwb-line-height: 1.2 !default;
+
+$uxwb-grid-size: 100% !default;
+$uxwb-grid-count: 12 !default;

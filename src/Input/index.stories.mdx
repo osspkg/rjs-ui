@@ -1,0 +1,75 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Input } from './index';
+
+<Meta
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: false },
+        },
+    }}
+    title='Fields/Input'
+    component={Input}
+    argTypes={{
+        count: {
+            options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            control: { type: 'radio' },
+        },
+    }}
+/>
+
+## Install
+
+<Canvas>
+    <Story name='base'>
+        <Input />
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='title'>
+        <Input title={'Enter text'} />
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='with change'>
+        <Input title={'Enter text'} color={'danger'} value={'777'} onChange={(e) => console.info(typeof e)} />
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='color'>
+        <Input title={'Choose a color'} color={'info'} type={'color'} />
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='tel'>
+        <Input title={'Choose a color'} color={'primary'} type={'tel'} />
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='password'>
+        <Input title={'Enter password'} color={'success'} type={'password'} />
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='date'>
+        <Input title={'Choose a date'} color={'secondary'} type={'date'} />
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='datetime'>
+        <Input title={'Choose a datetime'} color={'warning'} type={'datetime-local'} />
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='number'>
+        <Input title={'Change number'} color={'danger'} type={'number'} />
+    </Story>
+</Canvas>

@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use 'variables' as glob;
+
+:root {
+    @include glob.color('-hover', glob.$uxwb-color-hover-bg, '-bg');
+    @include glob.color('-hover', darken(glob.$uxwb-color-hover-bg, 5%), '-line');
+    @include glob.color('-hover', glob.$uxwb-color-hover-txt, '-text');
+
+    @each $c, $v in glob.$uxwb-colors {
+        @include glob.color($c, $v, '-bg');
+        @include glob.color($c, darken($v, 5%), '-line');
+        @include glob.color($c, map.get(glob.$uxwb-text-colors, $c), '-text');
+    }
+}

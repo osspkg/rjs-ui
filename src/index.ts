@@ -1,2 +1,5 @@
-export { default as Example } from './Example';
-export { default as Tabs } from './Tabs/index';
+// eslint-disable-next-line import/no-unresolved
+import './_styles/_index.scss';
+
+export { Row, Col } from './Grid';
+export { Input } from './Input';

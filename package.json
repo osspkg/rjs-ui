@@ -2,8 +2,10 @@
   "name": "@uxwb/react-components",
   "version": "0.0.0",
   "description": "UI components for React",
-  "author": "@uxwb <github@uxwb.net> (https://react.uxwb.net)",
+  "author": "@uxwb <github@uxwb.ru> (https://react.uxwb.ru)",
   "license": "BSD-3-Clause",
+  "homepage": "https://react.uxwb.ru",
+  "funding": "https://yoomoney.ru/fundraise/AjY9sQCXsQ0.230403",
   "repository": {
     "type": "git",
     "url": "https://github.com/uxwb/react-components.git"
@@ -20,8 +22,8 @@
     "build": "rm -rf dist && microbundle-crl --no-compress --format es,cjs,umd --globals react=React",
     "start": "microbundle-crl watch --no-sourcemap --format modern,es,cjs,umd",
     "clean": "rm yarn.lock && rm -rf node_modules",
-    "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --disable-telemetry",
-    "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook --disable-telemetry --no-dll --output-dir build"
+    "sb": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --disable-telemetry",
+    "build-sb": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook --disable-telemetry --no-dll --output-dir build"
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -37,18 +39,21 @@
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
+    "@storybook/addons": "^6.5.16",
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/client-api": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
+    "@storybook/theming": "^6.5.16",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "babel-loader": "^8.3.0",
     "cross-env": "^7.0.3",
+    "css-loader": "^6.7.3",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
@@ -60,6 +65,8 @@
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.0",
     "sass": "^1.60.0",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
     "typescript": "^5.0.0"
   },
   "sideEffects": false,
