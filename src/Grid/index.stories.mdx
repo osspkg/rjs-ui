@@ -1,0 +1,47 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Col, Row } from './index';
+
+<Meta
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: false },
+        },
+    }}
+    title='Base/Grid'
+    component={Col}
+    argTypes={{
+        count: {
+            options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            control: { type: 'radio' },
+        },
+    }}
+/>
+
+## Flex Grid
+
+<Canvas>
+    <Story name='flex'>
+        <Row>
+            <Col>2</Col>
+            <Col>1</Col>
+            <Col>6</Col>
+        </Row>
+    </Story>
+</Canvas>
+
+## Fixed Grid
+
+export const Template = ({ count }) => (
+    <Row>
+        <Col count={count}>{count}</Col>
+        <Col count={count}>{count}</Col>
+        <Col count={count}>{count}</Col>
+    </Row>
+);
+
+<Canvas>
+    <Story name='fixed' args={{ count: 2 }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
