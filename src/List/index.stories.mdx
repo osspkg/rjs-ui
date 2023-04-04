@@ -1,0 +1,42 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { List, ListItem } from './index';
+
+<Meta
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true },
+        },
+    }}
+    title='Base/List'
+/>
+
+<Canvas>
+    <Story name='button'>
+        <List type={'btn'} color={'info'} use={'List1'} onSelected={console.log}>
+            <ListItem name={'List1'}>List1 Content</ListItem>
+            <ListItem name={'List2'}>List2 Content</ListItem>
+        </List>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='line'>
+        <List type={'line'} color={'danger'} use={'List1'}>
+            <ListItem name={'List1'}>List1 Content</ListItem>
+            <ListItem name={'List2'}>List2 Content</ListItem>
+        </List>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='box'>
+        <List type={'box'} color={'primary'} use={'List1'}>
+            <ListItem name={'List1'}>
+                <h5>List1</h5>
+                <div>Content</div>
+            </ListItem>
+            <ListItem name={'List2'}>List2 Content</ListItem>
+        </List>
+    </Story>
+</Canvas>

@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Box } from './index';
+
+<Meta
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true },
+        },
+    }}
+    title='Base/Box'
+/>
+
+<Canvas>
+    <Story name='base'>
+        <Box>Hello</Box>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='color'>
+        <Box color={'danger'}>Hello</Box>
+        <Box color={'dark'}>Hello</Box>
+        <Box color={'info'}>Hello</Box>
+        <Box color={'secondary'}>Hello</Box>
+        <Box color={'warning'}>Hello</Box>
+        <Box color={'success'}>Hello</Box>
+        <Box color={'primary'}>Hello</Box>
+    </Story>
+</Canvas>

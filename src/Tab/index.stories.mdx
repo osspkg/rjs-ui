@@ -1,5 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import { Input, Tab, TabItem } from './index';
+import { Tab, TabItem } from './index';
 
 <Meta
     parameters={{
@@ -13,7 +13,7 @@ import { Input, Tab, TabItem } from './index';
 
 <Canvas>
     <Story name='button'>
-        <Tab type={'btn'} color={'info'} use={'Tab1'} onChange={console.log}>
+        <Tab type={'btn'} color={'info'} use={'Tab1'} onSelected={console.log}>
             <TabItem name={'Tab1'}>Tab1 Content</TabItem>
             <TabItem name={'Tab2'}>Tab2 Content</TabItem>
         </Tab>

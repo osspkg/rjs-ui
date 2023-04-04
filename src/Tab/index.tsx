@@ -11,7 +11,7 @@ export type TabItemProps = {
 
 export function TabItem({ children }: TabItemProps) {
   return (
-    <div>{children}    </div>
+    <div>{children}</div>
   );
 }
 
@@ -21,7 +21,7 @@ export type TabProps = {
   use?: string;
   color?: ColorsShort;
   type?: TabType;
-  onChange?: (arg: string) => void;
+  onSelected?: (arg: string) => void;
   children?: ReactElement;
 };
 
@@ -31,16 +31,16 @@ export type TabState = {
 };
 
 export function Tab({
-  use, type = 'btn', color = 'dark', children, onChange,
+  use, type = 'btn', color = 'dark', children, onSelected,
 }: TabProps) {
   const [currTabName, setCurrTabName] = useState<string>(use || '');
-  const [tabs, setTabs] = useState<TabState[]>([]);
+  const [data, setData] = useState<TabState[]>([]);
 
   useEffect(() => {
     if (children) {
       React.Children.forEach(children, (element) => {
         if (element.type === TabItem) {
-          setTabs((list) => [...list, { name: element.props.name, element }]);
+          setData((list) => [...list, { name: element.props.name, element }]);
         }
       });
     }
@@ -48,8 +48,8 @@ export function Tab({
 
   const changeHandler = (name: string) => {
     setCurrTabName(name);
-    if (onChange) {
-      onChange(name);
+    if (onSelected) {
+      onSelected(name);
     }
   };
 
@@ -57,7 +57,7 @@ export function Tab({
     <div>
       <div className={classNames({ [style[`tab--style-${type}`]]: true, [style[`tab--color-${color}`]]: true })}>
         <div className={style.tab}>
-          {tabs.map((tab, index) => (
+          {data.map((tab, index) => (
             <div
               key={index}
               className={
@@ -72,7 +72,7 @@ export function Tab({
           ))}
         </div>
       </div>
-      <div className={style.tabContent}>{ tabs.find((value) => value.name === currTabName)?.element }</div>
+      <div className={style.tabContent}>{ data.find((value) => value.name === currTabName)?.element }</div>
     </div>
 
   );

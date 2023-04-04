@@ -1,10 +1,10 @@
 import React, {
-  HTMLAttributes, ReactElement, ReactFragment,
+  ReactElement, ReactFragment,
 } from 'react';
 import style from './index.module.scss';
 
-export type RowProps = HTMLAttributes<HTMLDivElement> & {
-  children?: ReactElement | ReactFragment | null;
+export type RowProps = {
+  children?: ReactElement | ReactFragment;
 };
 
 export function Row({ children, ...other }:RowProps) {
