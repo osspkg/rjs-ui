@@ -1,0 +1,76 @@
+@use 'sass:map';
+@use '../_styles/variables' as glob;
+
+.tab {
+    display: flex;
+    flex-flow: row wrap;
+    border-width: 0;
+    border-style: solid;
+    border-bottom-width: glob.$uxwb-line-size;
+    padding-bottom: glob.$uxwb-padding-y-size;
+    margin-bottom: glob.$uxwb-margin-y-size;
+
+    &__item {
+        margin: glob.$uxwb-margin-y-size 0 0 0;
+        padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
+        border-style: solid;
+        border-width: 0;
+        cursor: pointer;
+    }
+}
+
+.tab--style {
+    .tab {
+        padding-bottom: 0;
+
+        &__item--active {
+            border-radius: glob.$uxwb-radius-size glob.$uxwb-radius-size 0 0;
+            border-bottom: 0;
+        }
+    }
+}
+
+.tab--style-btn {
+    .tab {
+        padding-bottom: glob.$uxwb-padding-y-size;
+        border-style: none;
+
+        &__item--active {
+            border-radius: glob.$uxwb-radius-size glob.$uxwb-radius-size;
+        }
+    }
+}
+
+.tab--style-line {
+    .tab {
+        padding-bottom: 0;
+        border-style: dashed;
+
+        &__item--active {
+            background-color: glob.var-color-bg('-light') !important;
+            color: glob.var-color-text('-light') !important;
+            border-bottom-width: glob.$uxwb-line-size * 4;
+            font-weight: glob.$uxwb-font-weight;
+            margin-bottom: -1px;
+        }
+    }
+}
+
+@each $c, $v in glob.$uxwb-colors {
+    .tab--color#{$c} {
+        .tab {
+            border-color: glob.var-color-line($c);
+
+            &__item--active {
+                background-color: glob.var-color-bg($c);
+                color: glob.var-color-text($c);
+                border-color: glob.var-color-line($c);
+            }
+        }
+    }
+}
+
+.tabContent {
+    margin-top: glob.$uxwb-base-size;
+    margin-bottom: glob.$uxwb-base-size;
+}

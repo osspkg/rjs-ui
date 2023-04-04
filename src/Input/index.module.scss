@@ -13,15 +13,8 @@
         border: none;
         vertical-align: middle;
         width: 100%;
-        user-select: none;
-        appearance: auto;
         min-width: glob.$uxwb-base-size * 3;
         font-size: glob.$uxwb-base-size * 1;
-
-        &:focus {
-            outline: none;
-            box-shadow: none;
-        }
     }
 
     label {

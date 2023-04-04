@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Input, Tab, TabItem } from './index';
+
+<Meta
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true },
+        },
+    }}
+    title='Base/Tab'
+/>
+
+<Canvas>
+    <Story name='button'>
+        <Tab type={'btn'} color={'info'} use={'Tab1'} onChange={console.log}>
+            <TabItem name={'Tab1'}>Tab1 Content</TabItem>
+            <TabItem name={'Tab2'}>Tab2 Content</TabItem>
+        </Tab>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='line'>
+        <Tab type={'line'} color={'danger'} use={'Tab1'}>
+            <TabItem name={'Tab1'}>Tab1 Content</TabItem>
+            <TabItem name={'Tab2'}>Tab2 Content</TabItem>
+        </Tab>
+    </Story>
+</Canvas>

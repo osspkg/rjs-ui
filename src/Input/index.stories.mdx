@@ -5,20 +5,11 @@ import { Input } from './index';
     parameters={{
         viewMode: 'docs',
         previewTabs: {
-            canvas: { hidden: false },
+            canvas: { hidden: true },
         },
     }}
     title='Fields/Input'
-    component={Input}
-    argTypes={{
-        count: {
-            options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-            control: { type: 'radio' },
-        },
-    }}
 />
-
-## Install
 
 <Canvas>
     <Story name='base'>

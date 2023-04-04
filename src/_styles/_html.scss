@@ -8,6 +8,14 @@
     box-sizing: border-box;
 }
 
+:active,
+:hover,
+:focus {
+    outline: 0;
+    outline-offset: 0;
+    box-shadow: none;
+}
+
 html,
 body {
     font-size: glob.$uxwb-base-size;
@@ -27,14 +35,6 @@ code {
 hr {
     margin: glob.$uxwb-base-size 0;
     opacity: 0.25;
-}
-
-:active,
-:hover,
-:focus {
-    outline: 0;
-    outline-offset: 0;
-    box-shadow: none;
 }
 
 @for $i from 1 through 6 {
