@@ -13,6 +13,7 @@
         ],
         "createDefaultProgram": true
       },
+      "parser": "@typescript-eslint/parser",
       "extends": [
         "eslint:recommended",
         "plugin:prettier/recommended",
@@ -21,7 +22,8 @@
         "plugin:import/typescript"
       ],
       "plugins": [
-        "prettier"
+        "prettier",
+        "@typescript-eslint"
       ],
       "rules": {
         "max-classes-per-file": 0,
