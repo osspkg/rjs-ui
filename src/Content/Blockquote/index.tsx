@@ -1,17 +1,17 @@
 import React, {
   ReactElement, ReactFragment,
 } from 'react';
-import { ColorsShort } from '../_core';
+import { ColorsShort } from '../../_core';
 import style from './index.module.scss';
 
-export type BoxProps = {
+export type BlockquoteProps = {
   color?: ColorsShort
   children?: ReactElement | ReactFragment | null;
 };
 
-export function Box({ color, children }:BoxProps) {
+export function Blockquote({ color, children }:BlockquoteProps) {
   return (
-      <div className={`${style[`box-${color}`]} ${style.box}`}>
+      <div className={`${style[`bq-${color}`]} ${style.bq}`}>
         {children}
       </div>
   );

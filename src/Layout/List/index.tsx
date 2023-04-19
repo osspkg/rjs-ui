@@ -1,12 +1,12 @@
 import React, {
-  ReactElement, ReactFragment, useState, useEffect,
+  ReactElement, useState, useEffect,
 } from 'react';
-import { classNames, ColorsShort } from '../_core';
+import { classNames, ColorsShort } from '../../_core';
 import style from './index.module.scss';
 
 export type ListItemProps = {
   name: string;
-  children?: ReactElement | ReactFragment | null;
+  children: ReactElement;
 };
 
 export function ListItem({ children }: ListItemProps) {
@@ -22,7 +22,7 @@ export type ListProps = {
   color?: ColorsShort;
   type?: ListType;
   onSelected?: (arg: string) => void;
-  children?: ReactElement ;
+  children: ReactElement ;
 };
 
 export type ListState = {
@@ -37,13 +37,11 @@ export function List({
   const [data, setData] = useState<ListState[]>([]);
 
   useEffect(() => {
-    if (children) {
-      React.Children.forEach(children, (element) => {
-        if (element.type === ListItem) {
-          setData((list) => [...list, { name: element.props.name, element }]);
-        }
-      });
-    }
+    React.Children.forEach(children, (element) => {
+      if (element.type === ListItem) {
+        setData((list) => [...list, { name: element.props.name, element }]);
+      }
+    });
   }, []);
 
   const changeHandler = (name: string) => {

@@ -1,7 +1,7 @@
 import React, {
   ReactElement, ReactFragment, useState, useEffect,
 } from 'react';
-import { classNames, ColorsShort } from '../_core';
+import { classNames, ColorsShort } from '../../_core';
 import style from './index.module.scss';
 
 export type TabItemProps = {

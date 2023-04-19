@@ -28,19 +28,6 @@
 //}
 //
 
-//
-//blockquote,
-//.bq {
-//    border-left: glob.$uxwb-line-size * 10 solid glob.var-color-line('-dark');
-//    @extend .box;
-//}
-//
-//@each $c, $v in glob.$uxwb-colors {
-//    .bq#{$c} {
-//        border-left-color: glob.var-color-line($c);
-//    }
-//}
-//
 //@each $c, $v in glob.$uxwb-colors {
 //    .tc#{$c} {
 //        color: glob.var-color-bg($c);

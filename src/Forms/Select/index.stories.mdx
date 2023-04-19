@@ -1,0 +1,49 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Option, Select } from './index';
+
+<Meta
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true },
+        },
+    }}
+    title='Forms/Select'
+/>
+
+<Canvas>
+    <Story name='base' height={'300px'}>
+        <br />
+        <Select title={'Key'} value={'key1'} color={'danger'} onSelected={(e) => console.log(e)}>
+            <Option value={'key1'}>
+                <h4>Key 1</h4>
+                <span>Content</span>
+            </Option>
+            <Option value={'key2'}>Key 2 Content</Option>
+            <Option value={'key3'}>Key 3 Content</Option>
+            <Option value={'key4'}>Key 4 Content</Option>
+            <Option value={'key5'}>Key 5 Content</Option>
+            <Option value={'key6'}>Key 6 Content</Option>
+            <Option value={'key7'}>Key 7 Content</Option>
+            <Option value={'key8'}>Key 8 Content</Option>
+            <Option value={'key9'}>Key 9 Content</Option>
+            <Option value={'key10'}>Key 10 Content</Option>
+        </Select>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='placeholder' height={'300px'}>
+        <br />
+        <Select title={'Key'} placeholder={'Choose a key ...'} color={'dark'} onSelected={(e) => console.log(e)}>
+            <Option value={'key1'}>
+                <h4>Key 1</h4>
+                <span>Content</span>
+            </Option>
+            <Option value={'key2'}>Key 2 Content</Option>
+            <Option value={'key3'}>Key 3 Content</Option>
+            <Option value={'key4'}>Key 4 Content</Option>
+            <Option value={'key5'}>Key 5 Content</Option>
+        </Select>
+    </Story>
+</Canvas>

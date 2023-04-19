@@ -1,5 +1,5 @@
 import React, { ChangeEvent, Component } from 'react';
-import { ColorsShort } from '../_core';
+import { ColorsShort } from '../../_core';
 import style from './index.module.scss';
 
 export type InputType = 'text' | 'password' | 'color' | 'date'

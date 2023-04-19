@@ -1,3 +1,5 @@
+import React, { ReactElement } from 'react';
+
 export enum Color {
   Default = '',
   Light = 'light',
@@ -20,4 +22,12 @@ export function classNames(args:{ [className: string]: boolean }): string {
     .filter(([, value]) => value)
     .map(([key]) => key)
     .join(' ');
+}
+
+export function extractText(el: ReactElement): string {
+  if (typeof el.props.children === 'string') {
+    return el.props.children;
+  }
+
+  return React.Children.map(el.props.children, (child) => extractText(child))?.join(' ') || '';
 }

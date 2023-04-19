@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Blockquote, Box } from './index';
+
+<Meta
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: { hidden: true },
+        },
+    }}
+    title='Content/Blockquote'
+/>
+
+<Canvas>
+    <Story name='base'>
+        <Blockquote>Hello</Blockquote>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name='color'>
+        <Blockquote color={'danger'}>Hello</Blockquote>
+        <Blockquote color={'dark'}>Hello</Blockquote>
+        <Blockquote color={'info'}>Hello</Blockquote>
+        <Blockquote color={'secondary'}>Hello</Blockquote>
+        <Blockquote color={'warning'}>Hello</Blockquote>
+        <Blockquote color={'success'}>Hello</Blockquote>
+        <Blockquote color={'primary'}>Hello</Blockquote>
+    </Story>
+</Canvas>

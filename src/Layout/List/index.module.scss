@@ -1,11 +1,12 @@
 @use 'sass:map';
-@use '../_styles/variables' as glob;
+@use '../../_styles/variables' as glob;
 
 .list__group {
     .list__item {
         list-style: none;
         display: block;
         padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
+        cursor: pointer;
     }
 }
 
