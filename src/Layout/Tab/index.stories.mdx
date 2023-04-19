@@ -2,29 +2,29 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { Tab, TabItem } from './index';
 
 <Meta
-    parameters={{
-        viewMode: 'docs',
-        previewTabs: {
-            canvas: { hidden: true },
-        },
-    }}
-    title='Layout/Tab'
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+  title='Layout/Tab'
 />
 
 <Canvas>
-    <Story name='button'>
-        <Tab type={'btn'} color={'info'} use={'Tab1'} onSelected={console.log}>
-            <TabItem name={'Tab1'}>Tab1 Content</TabItem>
-            <TabItem name={'Tab2'}>Tab2 Content</TabItem>
-        </Tab>
-    </Story>
+  <Story name='button'>
+    <Tab type={'btn'} color={'info'} use={'Tab1'} onSelected={console.log}>
+      <TabItem name={'Tab1'}>Tab1 Content</TabItem>
+      <TabItem name={'Tab2'}>Tab2 Content</TabItem>
+    </Tab>
+  </Story>
 </Canvas>
 
 <Canvas>
-    <Story name='line'>
-        <Tab type={'line'} color={'danger'} use={'Tab1'}>
-            <TabItem name={'Tab1'}>Tab1 Content</TabItem>
-            <TabItem name={'Tab2'}>Tab2 Content</TabItem>
-        </Tab>
-    </Story>
+  <Story name='line'>
+    <Tab type={'line'} color={'danger'} use={'Tab1'}>
+      <TabItem name={'Tab1'}>Tab1 Content</TabItem>
+      <TabItem name={'Tab2'}>Tab2 Content</TabItem>
+    </Tab>
+  </Story>
 </Canvas>

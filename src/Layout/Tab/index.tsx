@@ -1,7 +1,5 @@
-import React, {
-  ReactElement, ReactFragment, useState, useEffect,
-} from 'react';
-import { classNames, ColorsShort } from '../../_core';
+import React, { ReactElement, ReactFragment, useEffect, useState } from 'react';
+import { ColorsShort, classNames } from '../../_core';
 import style from './index.module.scss';
 
 export type TabItemProps = {
@@ -10,9 +8,7 @@ export type TabItemProps = {
 };
 
 export function TabItem({ children }: TabItemProps) {
-  return (
-    <div>{children}</div>
-  );
+  return <div>{children}</div>;
 }
 
 export type TabType = 'btn' | 'line';
@@ -27,12 +23,10 @@ export type TabProps = {
 
 export type TabState = {
   name: string;
-  element: ReactElement
+  element: ReactElement;
 };
 
-export function Tab({
-  use, type = 'btn', color = 'dark', children, onSelected,
-}: TabProps) {
+export function Tab({ use, type = 'btn', color = 'dark', children, onSelected }: TabProps) {
   const [currTabName, setCurrTabName] = useState<string>(use || '');
   const [data, setData] = useState<TabState[]>([]);
 
@@ -60,20 +54,19 @@ export function Tab({
           {data.map((tab, index) => (
             <div
               key={index}
-              className={
-                classNames({
-                  [style['tab__item--active']]: tab.name === currTabName,
-                  click: true,
-                  [style.tab__item]: true,
-                })
-              }
+              className={classNames({
+                [style['tab__item--active']]: tab.name === currTabName,
+                click: true,
+                [style.tab__item]: true,
+              })}
               onClick={() => changeHandler(tab.name)}
-            >{tab.name}</div>
+            >
+              {tab.name}
+            </div>
           ))}
         </div>
       </div>
-      <div className={style.tabContent}>{ data.find((value) => value.name === currTabName)?.element }</div>
+      <div className={style.tabContent}>{data.find((value) => value.name === currTabName)?.element}</div>
     </div>
-
   );
 }

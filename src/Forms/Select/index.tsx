@@ -1,6 +1,4 @@
-import React, {
-  ReactElement, useEffect, useState,
-} from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import { ColorsShort, extractText } from '../../_core';
 import style from './index.module.scss';
 
@@ -29,7 +27,12 @@ export type SelectOption = {
 };
 
 export function Select({
-  value = '', color = 'dark', placeholder = 'Choose ...', title, children, onSelected,
+  value = '',
+  color = 'dark',
+  placeholder = 'Choose ...',
+  title,
+  children,
+  onSelected,
 }: SelectProps) {
   const [filter, setFilter] = useState<string>('');
   const [popup, setPopup] = useState<boolean>(false);
@@ -49,7 +52,7 @@ export function Select({
     });
   }, []);
 
-  const changeHandler = (opt : SelectOption) => {
+  const changeHandler = (opt: SelectOption) => {
     setCurr(opt);
     setPopup(false);
     if (onSelected) {
@@ -57,29 +60,30 @@ export function Select({
     }
   };
 
-  return (<div className={style[`selectColor-${color}`] || style.selectColor}>
-    <div className={style.selectGroup}>
-      {title === undefined ? undefined : (<label>{title}</label>)}
-      <div onClick={() => setPopup(true)}>{curr?.element || placeholder}</div>
-      {!popup ? undefined : (
-        <div className={style.selectPopup} onMouseLeave={() => setPopup(false)}>
-          {options.length < 10 ? undefined : (
-            <div className={style['selectPopup--search']}>
-              <input placeholder={'...'} value={filter} onChange={(e) => setFilter(e.currentTarget.value)}/>
+  return (
+    <div className={style[`selectColor-${color}`] || style.selectColor}>
+      <div className={style.selectGroup}>
+        {title === undefined ? undefined : <label>{title}</label>}
+        <div onClick={() => setPopup(true)}>{curr?.element || placeholder}</div>
+        {!popup ? undefined : (
+          <div className={style.selectPopup} onMouseLeave={() => setPopup(false)}>
+            {options.length < 10 ? undefined : (
+              <div className={style['selectPopup--search']}>
+                <input placeholder={'...'} value={filter} onChange={(e) => setFilter(e.currentTarget.value)} />
+              </div>
+            )}
+            <div className={style['selectPopup--list']}>
+              {options
+                .filter((item) => filter.length === 0 || item.ctx.indexOf(filter) > 0)
+                .map((item) => (
+                  <div key={item.value} className={style['selectPopup--list-item']} onClick={() => changeHandler(item)}>
+                    {item.element}
+                  </div>
+                ))}
             </div>
-          )}
-          <div className={style['selectPopup--list']}>
-            {options.filter((item) => filter.length === 0 || item.ctx.indexOf(filter) > 0)
-              .map((item) => (
-                <div
-                  key={item.value}
-                  className={style['selectPopup--list-item']}
-                  onClick={() => changeHandler(item)}
-                >{item.element}</div>
-              ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
-  </div>);
+  );
 }

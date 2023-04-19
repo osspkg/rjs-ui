@@ -2,87 +2,87 @@
 @use '../../_styles/variables' as glob;
 
 .list__group {
-    .list__item {
-        list-style: none;
-        display: block;
-        padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
-        cursor: pointer;
-    }
+  .list__item {
+    list-style: none;
+    display: block;
+    padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
+    cursor: pointer;
+  }
 }
 
 .list--style-box {
-    .list__group {
-        .list__item {
-            border-width: glob.$uxwb-line-size;
-            border-bottom-width: 0;
-            border-style: solid;
-        }
-
-        .list__item:first-child {
-            border-radius: glob.$uxwb-radius-size glob.$uxwb-radius-size 0 0;
-        }
-
-        .list__item:last-child {
-            border-bottom-width: glob.$uxwb-line-size;
-            border-radius: 0 0 glob.$uxwb-radius-size glob.$uxwb-radius-size;
-        }
+  .list__group {
+    .list__item {
+      border-width: glob.$uxwb-line-size;
+      border-bottom-width: 0;
+      border-style: solid;
     }
+
+    .list__item:first-child {
+      border-radius: glob.$uxwb-radius-size glob.$uxwb-radius-size 0 0;
+    }
+
+    .list__item:last-child {
+      border-bottom-width: glob.$uxwb-line-size;
+      border-radius: 0 0 glob.$uxwb-radius-size glob.$uxwb-radius-size;
+    }
+  }
 }
 
 .list--style-line {
-    .list__group {
-        .list__item {
-            border-width: 0;
-            border-bottom-width: glob.$uxwb-line-size;
-            border-style: solid;
-        }
-
-        .list__item:last-child {
-            border-bottom-width: 0;
-        }
+  .list__group {
+    .list__item {
+      border-width: 0;
+      border-bottom-width: glob.$uxwb-line-size;
+      border-style: solid;
     }
+
+    .list__item:last-child {
+      border-bottom-width: 0;
+    }
+  }
 }
 
 .list--style-btn {
-    .list__group {
-        .list__item {
-            border-width: 0;
-            border-radius: glob.$uxwb-radius-size;
-        }
-
-        .list__item:last-child {
-            border-bottom-width: 0;
-        }
+  .list__group {
+    .list__item {
+      border-width: 0;
+      border-radius: glob.$uxwb-radius-size;
     }
+
+    .list__item:last-child {
+      border-bottom-width: 0;
+    }
+  }
 }
 
 @each $c, $v in glob.$uxwb-colors {
-    .list--color#{$c} {
-        .list__item {
-            border-color: glob.var-color-line($c);
-            background-color: glob.var-color-bg('-light');
-            color: glob.var-color-text('-light');
+  .list--color#{$c} {
+    .list__item {
+      border-color: glob.var-color-line($c);
+      background-color: glob.var-color-bg('-light');
+      color: glob.var-color-text('-light');
 
-            &:hover {
-                background-color: glob.var-color-bg('-hover');
-                color: glob.var-color-text('-hover');
-            }
+      &:hover {
+        background-color: glob.var-color-bg('-hover');
+        color: glob.var-color-text('-hover');
+      }
 
-            &--active {
-                background-color: glob.var-color-bg($c);
-                border-color: glob.var-color-line($c);
-                color: glob.var-color-text($c);
+      &--active {
+        background-color: glob.var-color-bg($c);
+        border-color: glob.var-color-line($c);
+        color: glob.var-color-text($c);
 
-                &:hover {
-                    background-color: glob.var-color-bg($c);
-                    color: glob.var-color-text($c);
-                }
-            }
-
-            .list__item-desc {
-                font-size: glob.$uxwb-base-size * 0.8;
-                padding-top: glob.$uxwb-padding-y-size;
-            }
+        &:hover {
+          background-color: glob.var-color-bg($c);
+          color: glob.var-color-text($c);
         }
+      }
+
+      .list__item-desc {
+        font-size: glob.$uxwb-base-size * 0.8;
+        padding-top: glob.$uxwb-padding-y-size;
+      }
     }
+  }
 }

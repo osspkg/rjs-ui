@@ -1,7 +1,5 @@
-import React, {
-  ReactElement, useState, useEffect,
-} from 'react';
-import { classNames, ColorsShort } from '../../_core';
+import React, { ReactElement, useEffect, useState } from 'react';
+import { ColorsShort, classNames } from '../../_core';
 import style from './index.module.scss';
 
 export type ListItemProps = {
@@ -10,9 +8,7 @@ export type ListItemProps = {
 };
 
 export function ListItem({ children }: ListItemProps) {
-  return (
-    <div>{children}</div>
-  );
+  return <div>{children}</div>;
 }
 
 export type ListType = 'box' | 'btn' | 'line';
@@ -22,7 +18,7 @@ export type ListProps = {
   color?: ColorsShort;
   type?: ListType;
   onSelected?: (arg: string) => void;
-  children: ReactElement ;
+  children: ReactElement;
 };
 
 export type ListState = {
@@ -30,9 +26,7 @@ export type ListState = {
   element?: ReactElement;
 };
 
-export function List({
-  use, type = 'btn', color = 'dark', children, onSelected,
-}: ListProps) {
+export function List({ use, type = 'btn', color = 'dark', children, onSelected }: ListProps) {
   const [currListName, setCurrListName] = useState<string>(use || '');
   const [data, setData] = useState<ListState[]>([]);
 
@@ -52,24 +46,22 @@ export function List({
   };
 
   return (
-      <div className={classNames({ [style[`list--style-${type}`]]: true, [style[`list--color-${color}`]]: true })}>
-        <ul className={style.list__group}>
-          {data.map((datum, index) => (
-            <li
-              key={index}
-              className={
-                classNames({
-                  [style['list__item--active']]: datum.name === currListName,
-                  click: true,
-                  [style.list__item]: true,
-                })
-              }
-              onClick={() => changeHandler(datum.name)}
-            >
-              <div>{datum.element}</div>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className={classNames({ [style[`list--style-${type}`]]: true, [style[`list--color-${color}`]]: true })}>
+      <ul className={style.list__group}>
+        {data.map((datum, index) => (
+          <li
+            key={index}
+            className={classNames({
+              [style['list__item--active']]: datum.name === currListName,
+              click: true,
+              [style.list__item]: true,
+            })}
+            onClick={() => changeHandler(datum.name)}
+          >
+            <div>{datum.element}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

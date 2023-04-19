@@ -11,15 +11,19 @@ export type MenuLinkProps = {
 };
 
 export function MenuLink({ to, children }: MenuLinkProps) {
-  return (<div className={style.menuLink}>
-    <a href={to}>{children}</a>
-  </div>);
+  return (
+    <div className={style.menuLink}>
+      <a href={to}>{children}</a>
+    </div>
+  );
 }
 
 export function MenuDivider() {
-  return (<div className={style.menuDivider}>
-    <hr />
-  </div>);
+  return (
+    <div className={style.menuDivider}>
+      <hr />
+    </div>
+  );
 }
 
 // -----------------------------------------------------------------
@@ -29,9 +33,7 @@ export type MenuHeaderProps = {
 };
 
 export function MenuHeader({ children }: MenuHeaderProps) {
-  return (<div className={style.menuHeader}>
-    {children}
-  </div>);
+  return <div className={style.menuHeader}>{children}</div>;
 }
 
 // -----------------------------------------------------------------
@@ -41,9 +43,7 @@ export type MenuFooterProps = {
 };
 
 export function MenuFooter({ children }: MenuFooterProps) {
-  return (<div className={style.menuFooter}>
-    {children}
-  </div>);
+  return <div className={style.menuFooter}>{children}</div>;
 }
 
 // -----------------------------------------------------------------
@@ -53,9 +53,7 @@ export type MenuBodyProps = {
 };
 
 export function MenuBody({ children }: MenuBodyProps) {
-  return (<div className={style.menuBody}>
-    {children}
-  </div>);
+  return <div className={style.menuBody}>{children}</div>;
 }
 
 // -----------------------------------------------------------------
@@ -92,9 +90,9 @@ export function Menu({ color = 'secondary', children }: MenuProps) {
   //   }
   // };
 
-  return (<div className={style[`menuColor-${color}`] || style.menuColor}>
-    <div className={style.menu}>
-      {children}
+  return (
+    <div className={style[`menuColor-${color}`] || style.menuColor}>
+      <div className={style.menu}>{children}</div>
     </div>
-  </div>);
+  );
 }

@@ -2,50 +2,50 @@
 @use '../../_styles/variables' as glob;
 
 .menu {
-    z-index: 2;
-    position: sticky;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 15rem;
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 15rem;
 
+  border-style: solid;
+  border-width: 0 glob.$uxwb-line-size 0 0;
+
+  display: flex;
+  align-items: normal;
+  flex-direction: column;
+
+  &Divider {
+    margin: 0 -(glob.$uxwb-padding-x-size);
+  }
+
+  &Link {
+  }
+
+  &Body {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
+  }
+
+  &Header {
     border-style: solid;
-    border-width: 0 glob.$uxwb-line-size 0 0;
+    border-width: 0 0 glob.$uxwb-line-size 0;
+    padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
+  }
 
-    display: flex;
-    align-items: normal;
-    flex-direction: column;
-
-    &Divider {
-        margin: 0 -(glob.$uxwb-padding-x-size);
-    }
-
-    &Link {
-    }
-
-    &Body {
-        -webkit-box-flex: 1;
-        flex-grow: 1;
-        overflow-y: auto;
-        padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
-    }
-
-    &Header {
-        border-style: solid;
-        border-width: 0 0 glob.$uxwb-line-size 0;
-        padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
-    }
-
-    &Footer {
-        border-style: solid;
-        border-width: glob.$uxwb-line-size 0 0 0;
-        padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
-    }
+  &Footer {
+    border-style: solid;
+    border-width: glob.$uxwb-line-size 0 0 0;
+    padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
+  }
 }
 
 @each $c, $v in glob.$uxwb-colors {
-    .menuColor#{$c} {
-        .menu {
-        }
+  .menuColor#{$c} {
+    .menu {
     }
+  }
 }
