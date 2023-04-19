@@ -16,6 +16,7 @@
       "parser": "@typescript-eslint/parser",
       "extends": [
         "eslint:recommended",
+        "plugin:react/recommended",
         "plugin:prettier/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/recommended",
@@ -23,6 +24,8 @@
       ],
       "plugins": [
         "prettier",
+        "react",
+        "react-hooks",
         "@typescript-eslint"
       ],
       "rules": {
