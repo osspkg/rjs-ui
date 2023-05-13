@@ -1,0 +1,18 @@
+@use '../../_styles/variables' as glob;
+
+.bq {
+  padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
+  background-color: glob.var-color-bg('');
+  color: glob.var-color-text('');
+
+  border-style: solid;
+  border-radius: glob.$uxwb-radius-size;
+  border-color: glob.var-color-line('');
+  border-width: glob.$uxwb-line-size glob.$uxwb-line-size glob.$uxwb-line-size glob.$uxwb-line-size * 15;
+}
+
+@each $c, $v in glob.$uxwb-colors {
+  .bq#{$c} {
+    border-left-color: glob.var-color-line($c);
+  }
+}

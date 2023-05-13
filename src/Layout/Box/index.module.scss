@@ -1,0 +1,14 @@
+@use '../../_styles/variables' as glob;
+
+.box {
+  border-radius: glob.$uxwb-radius-size;
+  padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
+}
+
+@each $c, $v in glob.$uxwb-colors {
+  .box#{$c} {
+    border: glob.$uxwb-line-size solid glob.var-color-line($c);
+    background-color: glob.var-color-bg($c);
+    color: glob.var-color-text($c);
+  }
+}

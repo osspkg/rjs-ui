@@ -1,78 +1,52 @@
 @use 'sass:map';
 @use 'variables' as glob;
 
-.click {
-    cursor: pointer;
-}
+//.ta-c {
+//    text-align: center;
+//}
+//
+//.ta-l {
+//    text-align: left;
+//}
+//
+//.ta-r {
+//    text-align: right;
+//}
+//
+//.ww {
+//    word-wrap: break-word;
+//    word-break: keep-all;
+//}
+//
 
-.ta-c {
-    text-align: center;
-}
+//
+//@each $c, $v in glob.$uxwb-colors {
+//    .bg#{$c} {
+//        background-color: glob.var-color-bg($c);
+//        color: glob.var-color-text($c);
+//    }
+//}
+//
 
-.ta-l {
-    text-align: left;
-}
-
-.ta-r {
-    text-align: right;
-}
-
-.ww {
-    word-wrap: break-word;
-    word-break: keep-all;
-}
-
-@each $c, $v in glob.$uxwb-colors {
-    .box#{$c} {
-        border: glob.$uxwb-line-size solid glob.var-color-line($c);
-        background-color: glob.var-color-bg($c);
-        color: glob.var-color-text($c);
-    }
-}
-
-@each $c, $v in glob.$uxwb-colors {
-    .bg#{$c} {
-        background-color: glob.var-color-bg($c);
-        color: glob.var-color-text($c);
-    }
-}
-
-.box {
-    border-radius: glob.$uxwb-radius-size;
-    padding: glob.$uxwb-padding-y-size glob.$uxwb-padding-x-size;
-}
-
-blockquote,
-.bq {
-    border-left: glob.$uxwb-line-size * 10 solid glob.var-color-line('-dark');
-    @extend .box;
-}
-
-@each $c, $v in glob.$uxwb-colors {
-    .bq#{$c} {
-        border-left-color: glob.var-color-line($c);
-    }
-}
-
-@each $c, $v in glob.$uxwb-colors {
-    .tc#{$c} {
-        color: glob.var-color-bg($c);
-    }
-}
-
-@for $i from 1 through 5 {
-    .m-#{$i} {
-        margin: glob.$uxwb-base-size * $i;
-    }
-    .p-#{$i} {
-        padding: glob.$uxwb-base-size * $i;
-    }
-    @each $k, $v in glob.$uxwb-prefix {
-        .m#{$k}-#{$i} {
-            margin#{$v}: glob.$uxwb-base-size * $i;
-        }
-        .p#{$k}-#{$i} {
-            padding#{$v}: glob.$uxwb-base-size * $i;
-        }
-    }
-}
+//@each $c, $v in glob.$uxwb-colors {
+//    .tc#{$c} {
+//        color: glob.var-color-bg($c);
+//    }
+//}
+//
+//@for $i from 1 through 5 {
+//    .m-#{$i} {
+//        margin: glob.$uxwb-base-size * $i;
+//    }
+//    .p-#{$i} {
+//        padding: glob.$uxwb-base-size * $i;
+//    }
+//    @each $k, $v in glob.$uxwb-prefix {
+//        .m#{$k}-#{$i} {
+//            margin#{$v}: glob.$uxwb-base-size * $i;
+//        }
+//        .p#{$k}-#{$i} {
+//            padding#{$v}: glob.$uxwb-base-size * $i;
+//        }
+//    }
+//}

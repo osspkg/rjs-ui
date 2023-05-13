@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Menu, MenuBody, MenuDivider, MenuFooter, MenuHeader, MenuLink } from './index';
+
+<Meta
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+  title='Layout/Menu'
+/>
+
+<Canvas>
+  <Story name='base'>
+    <Menu>
+      <MenuHeader title={'123'}>1231</MenuHeader>
+      <MenuBody title={'45645456'}>
+        <MenuDivider />
+        <MenuLink to={'/'}>Hello</MenuLink>
+      </MenuBody>
+      <MenuFooter title={'123'}>1231</MenuFooter>
+    </Menu>
+  </Story>
+</Canvas>
