@@ -1,13 +1,13 @@
-# @uxwb/react-components
+# @uxwb/rjs-ui
 
 > UI components for React
 
-[![NPM](https://img.shields.io/npm/v/@uxwb/react-components.svg)](https://www.npmjs.com/package/@uxwb/react-components)
+[![NPM](https://img.shields.io/npm/v/@uxwb/rjs-ui.svg)](https://www.npmjs.com/package/@uxwb/rjs-ui)
 
 ## Install
 
 ```bash
-yarn add @uxwb/react-components
+yarn add @uxwb/rjs-ui
 ```
 
 ## Demo
@@ -19,7 +19,7 @@ See [Storybook](https://react.uxwb.ru)
 ```tsx
 import React, { Component } from 'react'
 
-import { Row, Col } from '@uxwb/react-components';
+import { Row, Col } from '@uxwb/rjs-ui';
 
 class Example extends Component {
   render() {
